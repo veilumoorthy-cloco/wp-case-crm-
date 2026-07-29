@@ -70,6 +70,17 @@ export function ContactForm({
   const [selectedTagIds, setSelectedTagIds] = useState<string[]>([]);
   const [loadingTags, setLoadingTags] = useState(false);
 
+  const fetchTags = useCallback(async () => {
+    setLoadingTags(true);
+    const client = createClient();
+    const { data } = await client
+      .from('tags')
+      .select('*')
+      .order('name');
+    if (data) setTags(data);
+    setLoadingTags(false);
+  }, []);
+
   useEffect(() => {
     if (open) {
       setName(contact?.name ?? '');
@@ -103,17 +114,6 @@ export function ContactForm({
       setCheckingDup(false);
     }
   }
-
-  const fetchTags = useCallback(async () => {
-    setLoadingTags(true);
-    const client = createClient();
-    const { data } = await client
-      .from('tags')
-      .select('*')
-      .order('name');
-    if (data) setTags(data);
-    setLoadingTags(false);
-  }, []);
 
   function toggleTag(tagId: string) {
     setSelectedTagIds((prev) =>
