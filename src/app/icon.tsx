@@ -22,21 +22,17 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#7c3aed", // primary (Hostinger-aligned purple)
-          borderRadius: 6,
+          background: "transparent",
         }}
       >
         <svg
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
+          width="32"
+          height="32"
+          viewBox="0 0 100 100"
           fill="none"
-          stroke="#ffffff"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
         >
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          <path d="M50 0C55 20 70 35 90 40C70 45 55 60 50 80C45 60 30 45 10 40C30 35 45 20 50 0Z" fill="#22c55e" />
+          <path d="M50 20C52 32 60 40 72 42C60 44 52 52 50 64C48 52 40 44 28 42C40 40 48 32 50 20Z" fill="#16a34a" />
         </svg>
       </div>
     ),

@@ -77,6 +77,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { LogoIcon } from "@/components/ui/logo";
 
 interface NavItem {
   href: string;
@@ -186,14 +187,18 @@ export function Sidebar({ open = false, onClose }: SidebarProps) {
       >
         {/* Logo row. On mobile we put a close button here; on desktop the
             close button is hidden since the sidebar is always-visible. */}
-        <div className="flex h-14 shrink-0 items-center justify-between gap-2 border-b border-border px-4">
-          <Link href="/dashboard" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <MessageSquare className="h-4 w-4" />
+        <div className="flex h-16 shrink-0 items-center justify-between gap-2 border-b border-border px-4">
+          <Link href="/dashboard" className="flex items-center gap-3">
+            {/* User requested green logo */}
+            <LogoIcon className="h-10 w-10" />
+            <div className="flex flex-col justify-center">
+              <span className="text-xl font-black leading-none tracking-tight text-foreground">
+                CASEFLOW
+              </span>
+              <span className="text-[0.7rem] font-bold leading-none tracking-[0.25em] text-foreground mt-1">
+                TEZFO
+              </span>
             </div>
-            <span className="text-sm font-semibold text-foreground">
-              {t("title")}
-            </span>
           </Link>
           <button
             type="button"
